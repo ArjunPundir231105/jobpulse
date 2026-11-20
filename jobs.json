@@ -1,0 +1,192 @@
+[
+  {
+    "id": "job-1",
+    "title": "AI Infrastructure Engineer",
+    "company": "Cognition Labs",
+    "location": "Remote",
+    "is_remote": true,
+    "category": "AI / ML",
+    "salary_min": 180000,
+    "salary_max": 240000,
+    "experience_level": "Senior",
+    "tags": ["Python", "Docker", "Kubernetes", "PyTorch", "Distributed Systems"],
+    "summary": "Build high-performance sandboxes and distributed inference pipelines for autonomous software engineering models.",
+    "description": "We are seeking an AI Infrastructure Engineer to architect and scale our agent runtime environments. You will optimize sandbox container execution, model routing, and low-latency compilation to support autonomous coding workflows.",
+    "requirements": [
+      "5+ years of experience with distributed systems in Python or Go",
+      "Deep understanding of Linux kernel, cgroups, and container virtualization",
+      "Familiarity with model serving frameworks (vLLM, Triton, or TensorRT-LLM)"
+    ]
+  },
+  {
+    "id": "job-2",
+    "title": "Senior Machine Learning Engineer",
+    "company": "Anthropic",
+    "location": "San Francisco, CA (Hybrid)",
+    "is_remote": false,
+    "category": "AI / ML",
+    "salary_min": 210000,
+    "salary_max": 280000,
+    "experience_level": "Senior",
+    "tags": ["Python", "PyTorch", "LLM", "RLHF", "GPU Clusters"],
+    "summary": "Train next-generation foundation models with a focus on alignment, interpretability, and reasoning efficiency.",
+    "description": "Join our safety and capabilities research team. You will train large-scale neural architectures, implement reinforcement learning from human feedback (RLHF), and profile performance across massive multi-node GPU clusters.",
+    "requirements": [
+      "Track record of training or fine-tuning transformer architectures at scale",
+      "Proficiency in PyTorch, Megatron-LM, or DeepSpeed",
+      "Strong research intuition paired with production engineering rigor"
+    ]
+  },
+  {
+    "id": "job-3",
+    "title": "Full Stack Engineer (React & TypeScript)",
+    "company": "Vercel",
+    "location": "Remote",
+    "is_remote": true,
+    "category": "Frontend / Full Stack",
+    "salary_min": 150000,
+    "salary_max": 195000,
+    "experience_level": "Mid-Senior",
+    "tags": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS"],
+    "summary": "Develop responsive, accessible developer dashboard experiences for next-generation web deployments.",
+    "description": "As a Full Stack Engineer at Vercel, you will build user-facing dashboard tools, preview collaboration features, and real-time edge telemetry views for millions of web developers.",
+    "requirements": [
+      "3+ years of professional React and TypeScript experience",
+      "Deep knowledge of Next.js App Router and server components",
+      "Obsession with web performance, Core Web Vitals, and accessibility"
+    ]
+  },
+  {
+    "id": "job-4",
+    "title": "Frontend Engineer (UI / Systems)",
+    "company": "Linear",
+    "location": "Remote",
+    "is_remote": true,
+    "category": "Frontend / Full Stack",
+    "salary_min": 140000,
+    "salary_max": 185000,
+    "experience_level": "Mid",
+    "tags": ["React", "TypeScript", "WebSockets", "CSS", "Design Systems"],
+    "summary": "Craft blazing fast, keyboard-centric productivity software with local-first client architecture.",
+    "description": "Linear is loved by software teams worldwide. You will craft fluid UI animations, optimize local SQLite synchronization, and evolve our design system with pixel-level attention to detail.",
+    "requirements": [
+      "High degree of UI craftsmanship and passion for product design",
+      "Solid command of modern JavaScript/TypeScript and client state management",
+      "Experience building keyboard shortcuts and responsive web applications"
+    ]
+  },
+  {
+    "id": "job-5",
+    "title": "Staff Backend Engineer (Distributed Systems)",
+    "company": "Stripe",
+    "location": "San Francisco, CA (or Remote)",
+    "is_remote": true,
+    "category": "Backend",
+    "salary_min": 195000,
+    "salary_max": 255000,
+    "experience_level": "Staff / Lead",
+    "tags": ["Go", "Java", "Kafka", "PostgreSQL", "High Throughput"],
+    "summary": "Scale the financial backbone of the internet handling hundreds of billions in global transactions.",
+    "description": "We are looking for a Staff Engineer to join our Core Transactions group. You will architect zero-downtime ledger migration pipelines, optimize payment routing, and build resilient idempotency systems.",
+    "requirements": [
+      "7+ years architecting fault-tolerant backend services",
+      "Experience with high-throughput event streaming (Kafka or similar)",
+      "Strong track record of technical leadership and cross-team mentorship"
+    ]
+  },
+  {
+    "id": "job-6",
+    "title": "Junior Python / Backend Developer",
+    "company": "Shopify",
+    "location": "Remote",
+    "is_remote": true,
+    "category": "Backend",
+    "salary_min": 90000,
+    "salary_max": 120000,
+    "experience_level": "Entry / Junior",
+    "tags": ["Python", "FastAPI", "SQL", "Git", "REST APIs"],
+    "summary": "Great entry-level opportunity to build merchant data integrations and scalable REST APIs.",
+    "description": "Kickstart your career on Shopify's ecosystem integrations team. You will write clean Python microservices, author API documentation, and collaborate closely with senior engineers to scale merchant workflows.",
+    "requirements": [
+      "Solid fundamentals in Python and object-oriented programming",
+      "Familiarity with relational databases (PostgreSQL or MySQL)",
+      "Strong curiosity, good communication skills, and eagerness to learn"
+    ]
+  },
+  {
+    "id": "job-7",
+    "title": "Senior Product Designer",
+    "company": "Figma",
+    "location": "Remote (US)",
+    "is_remote": true,
+    "category": "Design & Product",
+    "salary_min": 155000,
+    "salary_max": 195000,
+    "experience_level": "Senior",
+    "tags": ["Figma", "Design Systems", "Prototyping", "UX Research"],
+    "summary": "Design collaborative tools that empower millions of product creators and designers globally.",
+    "description": "Help shape the future of creative tools. You will lead end-to-end design for collaborative canvas features, conduct user research, and produce thoughtful, high-craft interactive prototypes.",
+    "requirements": [
+      "A portfolio demonstrating complex problem solving and visual finesse",
+      "Experience designing systems for creative or technical users",
+      "Ability to articulate design rationale clearly to engineering and leadership"
+    ]
+  },
+  {
+    "id": "job-8",
+    "title": "Data Scientist / Product Analytics",
+    "company": "Spotify",
+    "location": "New York, NY (Hybrid)",
+    "is_remote": false,
+    "category": "Data & Analytics",
+    "salary_min": 145000,
+    "salary_max": 185000,
+    "experience_level": "Mid-Senior",
+    "tags": ["Python", "SQL", "A/B Testing", "Tableau", "Machine Learning"],
+    "summary": "Turn behavioral data into actionable insights for music recommendation algorithms and user retention.",
+    "description": "Join Spotify's algorithmic discovery team. You will design rigorous A/B experiments, build metric dashboards, and model user listening habits to improve audio discovery.",
+    "requirements": [
+      "Degree in Statistics, Computer Science, or quantitative field",
+      "Expertise in SQL, Python data stack (pandas, numpy, statsmodels)",
+      "Strong background in causal inference and hypothesis testing"
+    ]
+  },
+  {
+    "id": "job-9",
+    "title": "Cloud DevOps & Platform Engineer",
+    "company": "Datadog",
+    "location": "Remote",
+    "is_remote": true,
+    "category": "DevOps & Cloud",
+    "salary_min": 150000,
+    "salary_max": 190000,
+    "experience_level": "Mid-Senior",
+    "tags": ["Terraform", "AWS", "Kubernetes", "CI/CD", "Monitoring"],
+    "summary": "Manage multi-region infrastructure and automated deployment pipelines supporting real-time telemetry.",
+    "description": "Help our engineering teams ship software reliably and fast. You will write Infrastructure-as-Code in Terraform, manage multi-cluster Kubernetes on AWS/GCP, and optimize deployment pipelines.",
+    "requirements": [
+      "3+ years managing production infrastructure on AWS or GCP",
+      "Hands-on experience with Terraform, Helm, and Kubernetes",
+      "Strong troubleshooting skills across Linux networking and security"
+    ]
+  },
+  {
+    "id": "job-10",
+    "title": "Product Manager, AI Workflows",
+    "company": "Notion",
+    "location": "San Francisco, CA",
+    "is_remote": false,
+    "category": "Design & Product",
+    "salary_min": 165000,
+    "salary_max": 215000,
+    "experience_level": "Senior",
+    "tags": ["Product Strategy", "LLMs", "UX", "Roadmapping", "Agile"],
+    "summary": "Define and ship intelligent AI features integrated seamlessly into the Notion workspace.",
+    "description": "Lead the product roadmap for Notion AI. Partner with researchers and engineers to identify high-value user problems, prototype LLM-powered productivity features, and bring them to millions of users.",
+    "requirements": [
+      "4+ years of product management experience shipping software products",
+      "Deep curiosity and intuition regarding generative AI capabilities and limits",
+      "Strong analytical ability and experience with user-centered design"
+    ]
+  }
+]

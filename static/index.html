@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobPulse AI — Simple Job Search with Gemini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">JobPulse <span class="ai-badge">AI</span></span>
+      </div>
+      
+      <div class="nav-actions">
+        <button id="key-btn" class="key-status-btn" onclick="openKeyModal()">
+          <span class="dot" id="key-dot"></span>
+          <span id="key-status-label">Gemini API Key</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Search Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Find roles that match what you actually want.</h1>
+      <p class="hero-sub">Powered by Google Gemini 3.8 Flash. Search by natural language or paste your resume.</p>
+      
+      <!-- Search Mode Tabs -->
+      <div class="search-tabs">
+        <button id="tab-query-btn" class="search-tab active" onclick="switchSearchTab('query')">
+          🔍 Natural Language Search
+        </button>
+        <button id="tab-resume-btn" class="search-tab" onclick="switchSearchTab('resume')">
+          📄 Match by Resume / Skills
+        </button>
+      </div>
+
+      <!-- Search Input Container -->
+      <div class="search-card">
+        <!-- Mode 1: Query Input -->
+        <div id="search-query-container" class="search-mode-panel active">
+          <div class="search-input-box">
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="e.g. 'Remote Python engineer working on LLMs' or 'Entry-level frontend developer'..."
+              onkeydown="if(event.key==='Enter') executeSearch()"
+            />
+            <button class="btn-search" onclick="executeSearch()">Search with AI</button>
+          </div>
+        </div>
+
+        <!-- Mode 2: Resume Input -->
+        <div id="search-resume-container" class="search-mode-panel">
+          <textarea 
+            id="resume-input" 
+            placeholder="Paste your resume, past projects, or core tech stack here..."
+            rows="3"
+          ></textarea>
+          <div class="resume-bar">
+            <button class="btn-sample" onclick="fillSampleResume()">Load Sample Tech Resume</button>
+            <button class="btn-search" onclick="executeSearch()">Match Jobs to Resume</button>
+          </div>
+        </div>
+
+        <!-- Quick Filters Row -->
+        <div class="filters-row">
+          <div class="filter-item">
+            <label>Category:</label>
+            <select id="filter-category" onchange="executeSearch()">
+              <option value="All">All Categories</option>
+              <option value="AI / ML">AI / ML</option>
+              <option value="Frontend / Full Stack">Frontend / Full Stack</option>
+              <option value="Backend">Backend</option>
+              <option value="Design & Product">Design & Product</option>
+              <option value="Data & Analytics">Data & Analytics</option>
+              <option value="DevOps & Cloud">DevOps & Cloud</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-remote" onchange="executeSearch()" />
+              <span>Remote Only</span>
+            </label>
+          </div>
+
+          <div class="filter-item">
+            <label>Min Salary:</label>
+            <select id="filter-salary" onchange="executeSearch()">
+              <option value="0">Any Salary</option>
+              <option value="100000">$100k+</option>
+              <option value="150000">$150k+</option>
+              <option value="180000">$180k+</option>
+              <option value="200000">$200k+</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Quick Query Tags -->
+        <div class="quick-tags">
+          <span class="tag-label">Try searching:</span>
+          <button class="tag-pill" onclick="setQueryAndSearch('Remote AI & LLM systems paying over $180k')">Remote AI Systems</button>
+          <button class="tag-pill" onclick="setQueryAndSearch('Junior Python developer entry level')">Junior Python</button>
+          <button class="tag-pill" onclick="setQueryAndSearch('React and Next.js frontend developer')">React & Next.js</button>
+          <button class="tag-pill" onclick="setQueryAndSearch('Product designer with Figma & prototyping experience')">Product Design</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Results & Details Container -->
+  <main class="results-container">
+    <div class="results-meta">
+      <span id="results-count">Loading roles...</span>
+      <span id="ai-indicator" class="ai-indicator hidden">✦ Gemini Reasoning Active</span>
+    </div>
+
+    <div class="content-grid">
+      <!-- Left Column: Job Cards List -->
+      <div id="jobs-list" class="jobs-list">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Right Column: Selected Job Details -->
+      <div class="job-detail-sticky">
+        <div id="job-detail-card" class="job-detail-card">
+          <div class="empty-detail">Select a job on the left to view full requirements and generate an AI application pitch.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Gemini API Key Modal -->
+  <div id="key-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Connect Gemini API Key</h3>
+        <button class="btn-close" onclick="closeKeyModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Enter your Google Gemini API key to enable semantic candidate-to-job matching, match explanations, and AI cover letters.
+        </p>
+        <div class="form-group">
+          <label for="gemini-key-input">API Key</label>
+          <input type="password" id="gemini-key-input" placeholder="AIzaSy..." />
+          <small>Get a free key at <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeKeyModal()">Cancel</button>
+        <button class="btn-primary" onclick="saveApiKey()">Save Key</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
